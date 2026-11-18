@@ -1,0 +1,35 @@
+{
+  "nome": "Fernanda Rogaciana",
+  "titulo": "Advogada",
+  "oab": "OAB/SP 496.545",
+  "cidade": "São Paulo/SP",
+  "endereco": "Rua Adalgisa de Abreu Ramalho, 126, 1º andar, CEP 05780-200, São Paulo/SP",
+  "celular": "(11) 9 4830-6412",
+  "telefone": "(11) 5510-1785",
+  "email": "rogaciana@adv.oabsp.org.br",
+  "siteUrl": null,
+  "canais": {
+    "facebook": null,
+    "googleMeuNegocio": null,
+    "instagram": null,
+    "whatsapp": "https://wa.me/5511948306412"
+  },
+  "areas": [
+    {
+      "nome": "Previdenciário",
+      "texto": "Informações sobre aposentadorias, benefícios do INSS, revisões e direitos de quem contribui para a Previdência Social."
+    },
+    {
+      "nome": "Direito de família",
+      "texto": "Temas como divórcio, guarda, convivência, pensão alimentícia, união estável e divisão de bens."
+    },
+    {
+      "nome": "Recuperação de crédito",
+      "texto": "Caminhos previstos em lei para cobrança de valores devidos, negociação e acompanhamento de dívidas entre pessoas e empresas."
+    },
+    {
+      "nome": "Criminal",
+      "texto": "Direitos de quem é investigado ou acusado e garantias previstas no processo penal."
+    }
+  ]
+}

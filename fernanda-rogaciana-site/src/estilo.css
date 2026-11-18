@@ -1,0 +1,159 @@
+:root {
+  --bordo: #5e1626;
+  --bordo-escuro: #45101c;
+  --rosado: #f2c9cf;
+  --rosado-claro: #fbeef0;
+  --creme: #fff6f3;
+  --texto: #2b1a1e;
+  --texto-suave: #6d5257;
+  --serifa: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: Lato, "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bordo);
+  color: var(--texto);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: var(--bordo); text-underline-offset: 3px; }
+a:hover { color: var(--bordo-escuro); }
+
+/* Moldura rosada, como no cartão de visita */
+.moldura {
+  max-width: 960px;
+  margin: 24px auto;
+  background: var(--creme);
+  border: 3px solid var(--rosado);
+  outline: 1px solid var(--rosado);
+  outline-offset: 6px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 16px 32px;
+  background: var(--bordo);
+  color: var(--rosado);
+  border-bottom: 3px solid var(--rosado);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--rosado);
+  text-decoration: none;
+  min-width: 0;
+}
+.marca strong {
+  display: block;
+  font-family: var(--serifa);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+.marca small { display: block; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.menu { display: flex; gap: 20px; }
+.menu a { color: var(--rosado); text-decoration: none; font-weight: 700; letter-spacing: 0.04em; }
+.menu a:hover { color: var(--creme); text-decoration: underline; }
+
+main { padding: 32px; }
+
+h1, h2, h3 { font-family: var(--serifa); color: var(--bordo); line-height: 1.2; font-weight: 600; }
+h1 { font-size: 2.4rem; margin: 0 0 12px; }
+h2 { font-size: 1.7rem; margin: 40px 0 12px; }
+h3 { font-size: 1.35rem; margin: 0 0 6px; }
+
+.apresentacao { text-align: center; max-width: 640px; margin: 0 auto; }
+.apresentacao img { display: block; margin: 0 auto 12px; border-radius: 50%; }
+.apresentacao .oab { margin-top: 0; color: var(--texto-suave); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; }
+
+.areas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 16px;
+}
+.areas li {
+  background: var(--rosado-claro);
+  border: 1px solid var(--rosado);
+  border-radius: 10px;
+  padding: 16px;
+}
+.areas p { margin: 0; color: var(--texto-suave); font-size: 0.97rem; }
+
+.lista { display: grid; gap: 16px; }
+.cartao {
+  border-left: 4px solid var(--rosado);
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.cartao p:last-child { margin-bottom: 0; }
+.cartao h3 a { text-decoration: none; }
+.cartao h3 a:hover { text-decoration: underline; }
+
+.meta { color: var(--texto-suave); font-size: 0.88rem; margin: 0 0 6px; }
+.area { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--bordo); }
+.vazio { color: var(--texto-suave); font-style: italic; }
+
+.post { max-width: 680px; margin: 0 auto; }
+.post .descricao { font-size: 1.15rem; color: var(--texto-suave); }
+.post .texto h2 { font-size: 1.45rem; margin-top: 28px; }
+.fontes { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--rosado); font-size: 0.95rem; }
+.fontes h2 { font-size: 1.2rem; margin-top: 0; }
+.fontes a, .texto, .post h1 { overflow-wrap: anywhere; }
+
+.rodape {
+  background: var(--bordo);
+  color: var(--rosado);
+  padding: 24px 32px;
+  border-top: 3px solid var(--rosado);
+  font-size: 0.92rem;
+}
+.rodape a { color: var(--creme); }
+.rodape address { font-style: normal; overflow-wrap: anywhere; }
+.rodape .aviso { margin-bottom: 0; opacity: 0.85; font-size: 0.85rem; }
+.canais h2 { color: var(--rosado); font-size: 1.2rem; margin: 0 0 6px; }
+.canais ul { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+
+/* Prévias de aprovação */
+.versao pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #fff;
+  border: 1px solid var(--rosado);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: var(--sans);
+  font-size: 0.97rem;
+}
+.erro { color: #a3122a; font-weight: 700; }
+
+@media (max-width: 640px) {
+  .moldura { margin: 0; border-radius: 0; border-left: 0; border-right: 0; outline: 0; }
+  .topo, main, .rodape { padding-left: 16px; padding-right: 16px; }
+  main { padding-top: 24px; padding-bottom: 24px; }
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.45rem; }
+}
