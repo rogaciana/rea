@@ -11,7 +11,7 @@ Fernanda Rogaciana, advogada, OAB/SP 496.545.
   (`pendente`, `aprovada` ou `publicada`). Só `aprovada` e `publicada` aparecem no site.
 - `src/validar.mjs`: confere tamanhos, frase informativa e expressões vedadas pelo Provimento 205/2021.
 - `src/tiktok/`: vídeo vertical do TikTok. `cena.html` é a animação, `audio.py` gera a trilha e `render.mjs` produz o `tiktok.mp4` (precisa de Playwright e ffmpeg): `node src/tiktok/render.mjs rascunhos/<slug>/tiktok.mp4 /tmp/quadros`.
-- `deploy/github-pages.yml`: modelo para publicar a pasta `site/` no GitHub Pages a partir de um repositório próprio do escritório.
+- `netlify.toml`: o Netlify publica só a pasta `site/`. Os rascunhos nunca vão para o ar.
 - `src/build.mjs`: gera `site/` (para hospedar) e `rascunhos/<slug>/` (prévia para aprovação e arte do Instagram).
 
 ## Uso
@@ -34,5 +34,5 @@ Nenhuma senha, token ou dado de acesso fica neste repositório.
 
 ## Pendências
 
-- Endereço público do site (`siteUrl`) e hospedagem: usar um repositório próprio do escritório (ver `deploy/`), não este fork.
+- Endereço público do site (`siteUrl`) e hospedagem: usar um repositório próprio do escritório (Netlify ligado ao repositório; ver `netlify.toml`).
 - Links de Facebook, Instagram, Google Meu Negócio e TikTok em `content/escritorio.json`.
