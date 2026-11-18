@@ -78,11 +78,20 @@ export function validar(pub) {
   exigir(medidas.whatsapp <= 500, `WhatsApp com ${medidas.whatsapp} caracteres (máximo 500)`);
   exigir(pub.whatsapp.trim().endsWith(MARCADOR_LINK), "WhatsApp não termina com o link do blog");
 
+  const hashtagsTikTok = pub.tiktok.hashtags ?? [];
+  medidas.tiktok = caracteres(`${pub.tiktok.legenda}\n\n${hashtagsTikTok.join(" ")}`);
+  exigir(medidas.tiktok <= 600, `TikTok com ${medidas.tiktok} caracteres (máximo 600)`);
+  exigir(hashtagsTikTok.length <= 5, "TikTok com mais de 5 hashtags");
+  exigir(/link na bio/i.test(pub.tiktok.legenda), "TikTok sem \"link na bio\"");
+  exigir(!pub.tiktok.legenda.includes("http"), "TikTok com link na legenda");
+  exigir(pub.tiktok.duracaoSegundos <= 60, "vídeo do TikTok com mais de 60 segundos");
+
   const versoes = {
     blog: pub.corpo,
     facebook: pub.facebook,
     googleMeuNegocio: pub.googleMeuNegocio,
     instagram: legenda,
+    tiktok: `${pub.tiktok.legenda} ${pub.tiktok.roteiro.map((r) => r.texto).join(" ")}`,
     whatsapp: pub.whatsapp,
   };
   for (const [nome, texto] of Object.entries(versoes)) {

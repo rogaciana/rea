@@ -46,6 +46,7 @@ function canaisHtml(prefixo) {
   const rotulos = {
     facebook: "Facebook",
     instagram: "Instagram",
+    tiktok: "TikTok",
     googleMeuNegocio: "Google Meu Negócio",
     whatsapp: "WhatsApp",
   };
@@ -99,7 +100,7 @@ ${conteudo}
   <address>
     <strong>${escapar(escritorio.nome)}</strong> · ${escapar(escritorio.titulo)} · ${escapar(escritorio.oab)}<br>
     ${escapar(escritorio.endereco)}<br>
-    Celular ${escapar(escritorio.celular)} · Telefone ${escapar(escritorio.telefone)}<br>
+    Celular ${escapar(escritorio.celular)} · WhatsApp ${escapar(escritorio.whatsapp)}<br>
     <a href="mailto:${escapar(escritorio.email)}">${escapar(escritorio.email)}</a>
   </address>
   <p class="aviso">Os conteúdos deste site são apenas informativos e não substituem a análise de um caso concreto.</p>
@@ -234,6 +235,10 @@ function previaAprovacao(pub, resultado) {
   ${bloco("b. Facebook", pub.facebook, `${resultado.medidas.facebook} caracteres, com o link reservado`)}
   ${bloco("c. Google Meu Negócio", pub.googleMeuNegocio, `${resultado.medidas.googleMeuNegocio} caracteres`)}
   ${bloco("d. Instagram", `${legendaInstagram(pub)}\n\nTexto da imagem: ${pub.instagram.textoImagem}`, `${resultado.medidas.instagram} caracteres · imagem com ${resultado.medidas.palavrasImagem} palavras`)}
+  <section class="versao"><h2>f. TikTok</h2><p class="meta">${resultado.medidas.tiktok} caracteres · vídeo de ${pub.tiktok.duracaoSegundos} segundos (vertical)</p>
+    <video controls playsinline preload="metadata" style="max-width:100%;width:320px;border-radius:10px"><source src="./${escapar(pub.tiktok.video)}" type="video/mp4"></video>
+    <pre>${escapar(`${pub.tiktok.legenda}\n\n${pub.tiktok.hashtags.join(" ")}`)}</pre>
+    <h3>Roteiro</h3><ul>${pub.tiktok.roteiro.map((r) => `<li><strong>${escapar(r.tempo)}:</strong> ${escapar(r.texto)}</li>`).join("")}</ul></section>
   ${bloco("e. WhatsApp", pub.whatsapp, `${resultado.medidas.whatsapp} caracteres`)}
   <section class="versao"><h2>Lista de revisão</h2><ul>${pub.revisao.map((item) => `<li>${escapar(item)}</li>`).join("")}</ul></section>
 </section>`;

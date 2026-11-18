@@ -21,7 +21,13 @@
     "googleMeuNegocio": "Quem mora com os filhos em um imóvel que pertence só ao ex-cônjuge precisa pagar aluguel a ele? Segundo notícia do STJ de 04/11/2026, a Terceira Turma entendeu que não, porque a moradia dos filhos atende ao dever de sustento dos dois pais e, por isso, não há uso exclusivo do imóvel. A decisão é de um processo específico, e cada situação tem particularidades. Leia mais no blog: {{LINK_BLOG}}\n\nEste conteúdo é apenas informativo e não substitui a análise de um caso concreto.\n\nVocê já tinha ouvido falar sobre esse tema?",
     "instagram": {
       "legenda": "Depois do divórcio, quem continua morando com os filhos no imóvel que pertence só ao ex-cônjuge precisa pagar aluguel?\n\nEm notícia publicada em 04/11/2026, o Superior Tribunal de Justiça (STJ) informou que a Terceira Turma entendeu que não cabe essa cobrança quando o imóvel também é a moradia dos filhos do casal.\n\nO motivo: garantir moradia aos filhos faz parte do dever de sustento, que é dos dois pais. Por isso, segundo a relatora, ministra Nancy Andrighi, não há uso exclusivo do imóvel nem enriquecimento sem causa.\n\nAlguns pontos importantes:\n• O imóvel analisado foi comprado por um dos cônjuges antes do casamento, no regime da comunhão parcial (por isso não entrou na partilha).\n• O STJ admite indenização quando só um dos ex-cônjuges usa o imóvel comum e impede o outro de usá-lo.\n• A decisão é de um processo específico e não vale automaticamente para todos os casos.\n\nO texto completo está no blog (link na bio).\n\nFonte: STJ, notícia de 04/11/2026.\n\nEste conteúdo é apenas informativo e não substitui a análise de um caso concreto.",
-      "hashtags": ["#direitodefamilia", "#divorcio", "#guardadosfilhos", "#STJ", "#informacaojuridica"],
+      "hashtags": [
+        "#direitodefamilia",
+        "#divorcio",
+        "#guardadosfilhos",
+        "#STJ",
+        "#informacaojuridica"
+      ],
       "textoImagem": "Ex-cônjuge com os filhos no imóvel do outro paga aluguel?"
     },
     "whatsapp": "Informação geral sobre direito de família: segundo notícia do STJ de 04/11/2026, a Terceira Turma entendeu que o ex-cônjuge que mora com os filhos do casal em imóvel que pertence só ao outro não precisa pagar aluguel por esse uso. A decisão é de um processo específico. Este conteúdo é apenas informativo e não substitui a análise de um caso concreto. Leia o texto completo: {{LINK_BLOG}}",
@@ -31,10 +37,53 @@
       "Atualização posterior: não foi feita busca específica por embargos ou nova decisão sobre o tema após 04/11/2026. Conferir antes de publicar.",
       "Prazo da pesquisa: a notícia é de 04/11/2026, dentro dos 15 dias contados da data de preparo (18/11). Na data de publicação (20/11), estará com 16 dias.",
       "Dúvida de conteúdo: a frase sobre converter a indenização em parcela de pensão (\"in natura\") foi simplificada para \"pode, em tese, ser considerado parte da pensão alimentícia\". Confirmar se a simplificação está fiel.",
-      "Links dos canais: faltam os endereços do Facebook, do Instagram e do Google Meu Negócio para o site. O WhatsApp usa o celular do timbrado.",
       "O site ainda não tem endereço público. O campo {{LINK_BLOG}} será preenchido quando o site for hospedado e o blog for publicado.",
-      "Identidade visual: conferir a arte do Instagram (bordô, moldura rosada, monograma R com balança) e o logo original (arquivo enviado pela advogada), usado no site e na arte."
+      "Identidade visual: conferir a arte do Instagram (bordô, moldura rosada, monograma R com balança) e o logo original (arquivo enviado pela advogada), usado no site e na arte.",
+      "TikTok (vídeo): o tom é leve, com personagens desenhados e legendas grandes no estilo dos vídeos curtos. Conferir se humor e animação estão de acordo com a \"discrição e sobriedade\" exigidas pelo Código de Ética (art. 39) e pelo Provimento 205/2021. Se houver dúvida, o vídeo pode ser trocado por uma versão mais sóbria.",
+      "TikTok (vídeo): não há como garantir que o vídeo \"viralize\". Evitei apelos de engajamento, promessas e sensacionalismo; a única pergunta é a do gancho inicial.",
+      "TikTok (vídeo): a trilha é sintética e foi criada do zero, sem material de terceiros. Se preferir um som do próprio TikTok, escolher na hora de postar e conferir os direitos de uso.",
+      "TikTok (vídeo): os bonecos são genéricos e não representam pessoas reais. O vídeo diz \"Terceira Turma do STJ\" e mostra a fonte e a data na tela.",
+      "TikTok: ainda não há conta do escritório vinculada ao site, e não há conexão autorizada para postar. A postagem será manual, a menos que você autorize uma conexão.",
+      "Links dos canais: faltam os endereços do Facebook, do Instagram, do Google Meu Negócio e do TikTok para o site. O WhatsApp usa o novo número profissional (11) 9 2787-0665."
     ],
-    "publicacoes": {}
+    "publicacoes": {},
+    "tiktok": {
+      "legenda": "Quem mora com os filhos no imóvel do ex precisa pagar aluguel? Segundo notícia do STJ de 04/11/2026, a Terceira Turma entendeu que não, porque a moradia dos filhos atende ao dever de sustento dos dois pais. É um processo específico, e cada situação tem particularidades. Texto completo no blog (link na bio).\n\nEste conteúdo é apenas informativo e não substitui a análise de um caso concreto.",
+      "hashtags": [
+        "#direitodefamilia",
+        "#divorcio",
+        "#guardadosfilhos",
+        "#STJ",
+        "#informacaojuridica"
+      ],
+      "video": "tiktok.mp4",
+      "duracaoSegundos": 35,
+      "roteiro": [
+        {
+          "tempo": "0–5 s",
+          "texto": "Saiu do divórcio e ficou na casa com os filhos? Vai ter que pagar aluguel pro ex?"
+        },
+        {
+          "tempo": "5–11 s",
+          "texto": "Primeiro: o que é imóvel incomunicável? Comprado antes do casamento. Fica só de um deles e não entra na partilha."
+        },
+        {
+          "tempo": "11–17 s",
+          "texto": "Quando o STJ admite um \"aluguel presumido\"? Quando só um usa o imóvel, sozinho (uso exclusivo)."
+        },
+        {
+          "tempo": "17–25 s",
+          "texto": "Mas e se os filhos moram na casa? Para a Terceira Turma do STJ, não há uso exclusivo. Sustento e moradia dos filhos são dever dos dois pais."
+        },
+        {
+          "tempo": "25–30 s",
+          "texto": "Atenção: foi um processo específico, não é regra automática. Cada família é diferente."
+        },
+        {
+          "tempo": "30–35 s",
+          "texto": "Logo, nome e OAB. Texto completo no blog (link na bio). Frase informativa."
+        }
+      ]
+    }
   }
 ]
