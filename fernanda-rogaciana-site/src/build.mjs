@@ -2,15 +2,15 @@
 // e as prévias de aprovação (rascunhos/) das publicações pendentes.
 // Uso: node src/build.mjs
 
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { logoSvg } from "./logo.mjs";
 import { legendaInstagram, MARCADOR_LINK, validar } from "./validar.mjs";
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), "..");
 const lerJson = async (caminho) => JSON.parse(await readFile(join(raiz, caminho), "utf8"));
 
+const monogramaBase64 = (await readFile(join(raiz, "src", "assets", "monograma-suave.png"))).toString("base64");
 const escritorio = await lerJson("content/escritorio.json");
 const publicacoes = await lerJson("content/publicacoes.json");
 
@@ -73,7 +73,7 @@ function pagina({ titulo, descricao, conteudo, profundidade = 0, canonica = null
 <meta property="og:description" content="${escapar(descricao)}">
 <meta property="og:type" content="${profundidade > 1 ? "article" : "website"}">
 ${canonica ? `<link rel="canonical" href="${escapar(canonica)}">` : ""}
-<link rel="icon" href="${sobe}/assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="${sobe}/assets/icone.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -83,7 +83,7 @@ ${canonica ? `<link rel="canonical" href="${escapar(canonica)}">` : ""}
 <div class="moldura">
 <header class="topo">
   <a class="marca" href="${sobe}/">
-    <img src="${sobe}/assets/logo.svg" alt="" width="56" height="56">
+    <img src="${sobe}/assets/icone.png" alt="" width="56" height="56">
     <span><strong>${escapar(escritorio.nome)}</strong><small>${escapar(escritorio.titulo)} · ${escapar(escritorio.oab)}</small></span>
   </a>
   <nav class="menu" aria-label="Principal">
@@ -153,7 +153,7 @@ function paginaInicial(posts) {
     .map((area) => `<li><h3>${escapar(area.nome)}</h3><p>${escapar(area.texto)}</p></li>`)
     .join("\n");
   const conteudo = `<section class="apresentacao">
-  <img src="./assets/logo.svg" alt="Monograma R com balança da justiça" width="120" height="120">
+  <img class="logo-grande" src="./assets/logo.png" alt="Logo de Fernanda Rogaciana: monograma R com balança da justiça" width="1050" height="600">
   <h1>${escapar(escritorio.nome)}</h1>
   <p class="oab">${escapar(escritorio.titulo)} · ${escapar(escritorio.oab)}</p>
   <p>Escritório de advocacia em ${escapar(escritorio.cidade)}. Este espaço reúne informações jurídicas em linguagem simples, para ajudar a entender direitos, prazos e mudanças nas leis e nas decisões dos tribunais.</p>
@@ -206,18 +206,18 @@ export function arteInstagram(pub) {
   const texto = linhas
     .map((linha, i) => `<text x="540" y="${inicio + i * alturaLinha}" text-anchor="middle">${escapar(linha)}</text>`)
     .join("");
-  const logo = logoSvg({ tamanho: 170 }).replace("<svg ", '<svg x="455" y="120" ');
+  const logo = `<image x="400" y="95" width="280" height="217" href="data:image/png;base64,${monogramaBase64}"/>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
-  <rect width="1080" height="1080" fill="#5E1626"/>
-  <rect x="40" y="40" width="1000" height="1000" rx="28" fill="none" stroke="#F2C9CF" stroke-width="6"/>
-  <rect x="62" y="62" width="956" height="956" rx="18" fill="none" stroke="#F2C9CF" stroke-width="1.5" opacity="0.7"/>
+  <rect width="1080" height="1080" fill="#6E1325"/>
+  <rect x="40" y="40" width="1000" height="1000" rx="28" fill="none" stroke="#E3C2B0" stroke-width="6"/>
+  <rect x="62" y="62" width="956" height="956" rx="18" fill="none" stroke="#E3C2B0" stroke-width="1.5" opacity="0.7"/>
   ${logo}
-  <text x="540" y="350" text-anchor="middle" font-family="Lato, Arial, sans-serif" font-size="30" letter-spacing="6" fill="#F2C9CF">${escapar(pub.area.toUpperCase())}</text>
+  <text x="540" y="350" text-anchor="middle" font-family="Lato, Arial, sans-serif" font-size="30" letter-spacing="6" fill="#E3C2B0">${escapar(pub.area.toUpperCase())}</text>
   <g font-family="'Cormorant Garamond', Georgia, serif" font-size="80" font-weight="600" fill="#FFF6F3">${texto}</g>
-  <line x1="440" y1="800" x2="640" y2="800" stroke="#F2C9CF" stroke-width="2"/>
-  <text x="540" y="870" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" fill="#F2C9CF">${escapar(escritorio.nome.toUpperCase())}</text>
-  <text x="540" y="918" text-anchor="middle" font-family="Lato, Arial, sans-serif" font-size="26" letter-spacing="3" fill="#F2C9CF">${escapar(escritorio.titulo.toUpperCase())} · ${escapar(escritorio.oab)}</text>
-  <text x="540" y="985" text-anchor="middle" font-family="Lato, Arial, sans-serif" font-size="20" fill="#F2C9CF" opacity="0.85">Conteúdo informativo. Fonte: ${escapar(pub.fontes[0].orgao.replace(/.*\((.*)\)/, "$1"))}, ${dataCurta(pub.fontes[0].data)}</text>
+  <line x1="440" y1="800" x2="640" y2="800" stroke="#E3C2B0" stroke-width="2"/>
+  <text x="540" y="870" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" fill="#E3C2B0">${escapar(escritorio.nome.toUpperCase())}</text>
+  <text x="540" y="918" text-anchor="middle" font-family="Lato, Arial, sans-serif" font-size="26" letter-spacing="3" fill="#E3C2B0">${escapar(escritorio.titulo.toUpperCase())} · ${escapar(escritorio.oab)}</text>
+  <text x="540" y="985" text-anchor="middle" font-family="Lato, Arial, sans-serif" font-size="20" fill="#E3C2B0" opacity="0.85">Conteúdo informativo. Fonte: ${escapar(pub.fontes[0].orgao.replace(/.*\((.*)\)/, "$1"))}, ${dataCurta(pub.fontes[0].data)}</text>
 </svg>
 `;
 }
@@ -271,7 +271,10 @@ await escrever(join(saida, "blog", "index.html"), paginaBlog(noSite));
 for (const pub of noSite) {
   await escrever(join(saida, "blog", pub.slug, "index.html"), paginaPost(pub));
 }
-await escrever(join(saida, "assets", "logo.svg"), logoSvg({ tamanho: 120, fundo: "#5E1626" }));
+for (const [de, para] of [["logo-original.png", "logo.png"], ["icone.png", "icone.png"]]) {
+  await mkdir(join(saida, "assets"), { recursive: true });
+  await copyFile(join(raiz, "src", "assets", de), join(saida, "assets", para));
+}
 await escrever(join(saida, "assets", "estilo.css"), await readFile(join(raiz, "src", "estilo.css"), "utf8"));
 
 for (const pub of publicacoes.filter((p) => !NO_SITE.has(p.status))) {
@@ -280,7 +283,10 @@ for (const pub of publicacoes.filter((p) => !NO_SITE.has(p.status))) {
   await escrever(join(pasta, "blog.html"), paginaPost(pub, 1));
   await escrever(join(pasta, "instagram.svg"), arteInstagram(pub));
   // As prévias usam os mesmos recursos do site.
-  await escrever(join(raiz, "rascunhos", "assets", "logo.svg"), logoSvg({ tamanho: 120, fundo: "#5E1626" }));
+  await mkdir(join(raiz, "rascunhos", "assets"), { recursive: true });
+  for (const [de, para] of [["logo-original.png", "logo.png"], ["icone.png", "icone.png"]]) {
+    await copyFile(join(raiz, "src", "assets", de), join(raiz, "rascunhos", "assets", para));
+  }
   await escrever(join(raiz, "rascunhos", "assets", "estilo.css"), await readFile(join(raiz, "src", "estilo.css"), "utf8"));
 }
 

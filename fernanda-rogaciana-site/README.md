@@ -34,4 +34,3 @@ Nenhuma senha, token ou dado de acesso fica neste repositório.
 
 - Endereço público do site (`siteUrl`) e hospedagem.
 - Links de Facebook, Instagram e Google Meu Negócio em `content/escritorio.json`.
-- Arquivo original do logo (o monograma atual é uma recriação vetorial).

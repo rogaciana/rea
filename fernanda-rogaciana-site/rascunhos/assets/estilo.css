@@ -1,8 +1,8 @@
 :root {
-  --bordo: #5e1626;
-  --bordo-escuro: #45101c;
-  --rosado: #f2c9cf;
-  --rosado-claro: #fbeef0;
+  --bordo: #6e1325;
+  --bordo-escuro: #4f0d1a;
+  --rosado: #e3c2b0;
+  --rosado-claro: #fbefe9;
   --creme: #fff6f3;
   --texto: #2b1a1e;
   --texto-suave: #6d5257;
@@ -83,7 +83,7 @@ h2 { font-size: 1.7rem; margin: 40px 0 12px; }
 h3 { font-size: 1.35rem; margin: 0 0 6px; }
 
 .apresentacao { text-align: center; max-width: 640px; margin: 0 auto; }
-.apresentacao img { display: block; margin: 0 auto 12px; border-radius: 50%; }
+.apresentacao .logo-grande { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 20px; border-radius: 10px; }
 .apresentacao .oab { margin-top: 0; color: var(--texto-suave); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; }
 
 .areas ul {
