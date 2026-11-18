@@ -1,0 +1,10 @@
+# O Netlify publica somente a pasta site/ (posts aprovados).
+# Os rascunhos (rascunhos/) e o código ficam no repositório, mas nunca vão para o ar.
+[build]
+  publish = "site"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
